@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { AvatarStack, Kicker } from "@/components/ui";
+import { assetUrl } from "@/lib/asset-url";
 
 export function Hero() {
   return (
@@ -29,7 +30,7 @@ export function Hero() {
           <div className="absolute inset-8 -right-1 rounded-2xl bg-peach" aria-hidden="true" />
           <div className="image-frame relative aspect-[1.08/1]">
             <Image
-              src="/images/hero-teacher.webp"
+              src={assetUrl("/images/hero-teacher.webp")}
               alt="Teacher working on a laptop in a creative studio"
               fill
               fetchPriority="high"
@@ -42,7 +43,7 @@ export function Hero() {
             <span className="text-brand">120+</span> expert-led courses
           </p>
           <p className="absolute bottom-0 right-0 rounded-md bg-white px-4 py-3 text-sm font-semibold">
-            <span className="text-[#e8b216]" aria-label="five stars">
+            <span className="text-rating" aria-label="five stars">
               ★★★★★
             </span>{" "}
             4.9 avg rating

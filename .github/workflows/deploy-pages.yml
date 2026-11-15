@@ -35,8 +35,8 @@ jobs:
           bun run lint
           bun run format:check
 
-      - name: Build static export
-        run: bun run deploy:pages
+      - name: Build and verify static export
+        run: bun run verify:pages
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

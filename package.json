@@ -12,6 +12,7 @@
     "format": "oxfmt .",
     "format:check": "oxfmt --check .",
     "deploy:pages": "GITHUB_PAGES=true next build",
+    "verify:pages": "bun run deploy:pages && bun scripts/verify-pages-export.ts",
     "check": "bun run typecheck && bun run lint && bun run format:check && bun run build"
   },
   "dependencies": {

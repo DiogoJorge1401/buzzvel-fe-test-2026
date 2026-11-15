@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArrowLink, Kicker } from "@/components/ui";
+import { assetUrl } from "@/lib/asset-url";
 
 export function FeaturedCourse() {
   return (
@@ -11,7 +12,7 @@ export function FeaturedCourse() {
           </span>
           <div className="image-frame aspect-[7/5]">
             <Image
-              src="/images/featured-course.webp"
+              src={assetUrl("/images/featured-course.webp")}
               alt="Product designers reviewing material samples at a worktable"
               width={700}
               height={500}

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 
+import { assetUrl } from "@/lib/asset-url";
+
 type KickerProps = {
   readonly children: ReactNode;
   readonly inverse?: boolean;
@@ -28,7 +30,7 @@ export function AvatarStack({
           (file, index) => (
             <Image
               key={file}
-              src={`/images/${file}`}
+              src={assetUrl(`/images/${file}`)}
               alt={`Luma learner ${index + 1}`}
               width={34}
               height={34}

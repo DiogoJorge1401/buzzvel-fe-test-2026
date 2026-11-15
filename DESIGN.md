@@ -81,24 +81,23 @@ grids; mobile reflows to one column.
 - Hero is a two-column split above 960px.
 - Category cards use four columns above 900px, two on tablet and one on mobile.
 - Featured course is a two-column band above 800px.
-- Process and proof sections use three columns on desktop.
+- Process uses three columns and proof uses two balanced areas on desktop.
 - People and contact sections use two columns above 900px.
 - The contact form remains one semantic form at every width.
 
 ## 5. Reusable primitives and states
 
-- `Container`: bounded content width and responsive inline padding.
-- `ButtonLink`: primary, secondary and inverse states; hover, pressed,
-  focus-visible and disabled styles.
+- `.container-page`: bounded content width and responsive inline padding.
+- `.button`: primary, secondary and inverse variants with hover, pressed and
+  focus-visible states.
 - `ArrowLink`: text link with arrow, hover and focus-visible styles.
 - `Kicker`: uppercase contextual label used because the supplied reference
   explicitly includes it.
-- `CategoryCard`: neutral border, title, description and link.
 - `AvatarStack`: overlapping profile images with accessible labels.
-- `ImageFrame`: local optimized image with explicit dimensions and object fit.
-- `ContactForm`: idle, invalid browser state and submitted success state using
-  a small framework-independent enhancement.
-- `StepMark`: three colour variants matching the reference.
+- `.image-frame`: local optimized image with explicit dimensions and object fit.
+- `ContactForm`: native validation and submitted success state managed in a
+  small Client Component.
+- `Header`: native Popover navigation with a typed React close handler.
 
 ## 6. Required content
 
@@ -132,3 +131,5 @@ grids; mobile reflows to one column.
   the closest available geometric grotesk through `next/font`.
 - The contact form intentionally does not send data because the challenge says
   backend and CMS setup are not required.
+- Links for pages outside this single-page prototype are presented as inactive
+  labels instead of misleading destinations.

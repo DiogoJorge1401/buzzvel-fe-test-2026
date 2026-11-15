@@ -20,6 +20,7 @@ bun run lint
 bun run format:check
 bun run build
 bun run start
+bun run verify:pages
 ```
 
 `bun run check` runs the static checks and production build in sequence.
@@ -32,8 +33,8 @@ GitHub Pages.
 
 ## Key decisions
 
-- Server Components render the full landing page. The only Client Component is
-  the local contact form state.
+- Server Components render the content sections. Two small Client Components
+  own the mobile navigation and local contact-form state.
 - All visual assets are local copies of images supplied by the public Figma
   file, so the result does not depend on temporary Figma asset URLs.
 - The layout follows one document scroll owner and reflows to one column on
@@ -59,14 +60,3 @@ type safety and build output. The result was reviewed through the production
 build at desktop and mobile widths, with source-level checks run before
 submission. Every generated change was inspected and can be explained during a
 technical walkthrough.
-
-## Time spent
-
-Approximate focused implementation and verification time: 4 hours, including
-reference inspection, implementation, responsive QA, accessibility checks and
-production-build validation.
-
-## Submission
-
-The candidate number for the Buzzvel submission form is recorded in
-`SUBMISSION.md`, not rendered in the page.

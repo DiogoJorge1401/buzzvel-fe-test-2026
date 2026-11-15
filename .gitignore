@@ -1,5 +1,6 @@
 .next
 .omo
+AGENTS.md
 node_modules
 out
 *.log

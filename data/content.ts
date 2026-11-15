@@ -1,3 +1,5 @@
+import { assetUrl } from "@/lib/asset-url";
+
 export const categories = [
   {
     number: "01",
@@ -59,7 +61,7 @@ export const footerGroups = [
     links: [
       { label: "About", href: "#about" },
       { label: "Careers", href: "#contact" },
-      { label: "Journal", href: "#featured-course" },
+      { label: "Journal" },
     ],
   },
   {
@@ -67,19 +69,19 @@ export const footerGroups = [
     links: [
       { label: "Help Center", href: "#contact" },
       { label: "Contact", href: "#contact" },
-      { label: "Terms", href: "#footer" },
-      { label: "Privacy", href: "#footer" },
+      { label: "Terms" },
+      { label: "Privacy" },
     ],
   },
 ] as const;
 
 export const peopleImages = [
-  { src: "/images/student-study.webp", alt: "Student writing notes at a desk" },
-  { src: "/images/graduate.webp", alt: "Graduate holding a diploma" },
-  { src: "/images/campus-speaker.webp", alt: "Student speaking on campus" },
-  { src: "/images/online-class.webp", alt: "Learner joining an online class" },
-  { src: "/images/studio-session.webp", alt: "People collaborating in a studio" },
-  { src: "/images/campus-student.webp", alt: "Student reading outside" },
-  { src: "/images/library-student.webp", alt: "Student working in a library" },
-  { src: "/images/study-group.webp", alt: "Small group learning together" },
+  { src: assetUrl("/images/student-study.webp"), alt: "Student writing notes at a desk" },
+  { src: assetUrl("/images/graduate.webp"), alt: "Graduate holding a diploma" },
+  { src: assetUrl("/images/campus-speaker.webp"), alt: "Student speaking on campus" },
+  { src: assetUrl("/images/online-class.webp"), alt: "Learner joining an online class" },
+  { src: assetUrl("/images/studio-session.webp"), alt: "People collaborating in a studio" },
+  { src: assetUrl("/images/campus-student.webp"), alt: "Student reading outside" },
+  { src: assetUrl("/images/library-student.webp"), alt: "Student working in a library" },
+  { src: assetUrl("/images/study-group.webp"), alt: "Small group learning together" },
 ] as const;

@@ -19,9 +19,13 @@ export function Footer() {
             <ul className="mt-5 grid gap-3 text-sm">
               {group.links.map((link) => (
                 <li key={link.label}>
-                  <a className="text-footer-muted hover:text-white" href={link.href}>
-                    {link.label}
-                  </a>
+                  {"href" in link ? (
+                    <a className="text-footer-muted hover:text-white" href={link.href}>
+                      {link.label}
+                    </a>
+                  ) : (
+                    <span className="text-footer-muted/70">{link.label}</span>
+                  )}
                 </li>
               ))}
             </ul>

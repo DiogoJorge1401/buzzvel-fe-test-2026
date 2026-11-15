@@ -1,10 +1,20 @@
+"use client";
+
+import { useRef } from "react";
+
+const navigation = [
+  { label: "Courses", href: "#courses" },
+  { label: "For Teams", href: "#contact" },
+  { label: "Community", href: "#community" },
+  { label: "About", href: "#about" },
+] as const;
+
 export function Header() {
-  const navigation = [
-    { label: "Courses", href: "#courses" },
-    { label: "For Teams", href: "#contact" },
-    { label: "Community", href: "#community" },
-    { label: "About", href: "#about" },
-  ] as const;
+  const mobileNavigation = useRef<HTMLElement>(null);
+
+  const closeMobileNavigation = () => {
+    mobileNavigation.current?.hidePopover();
+  };
 
   return (
     <header className="border-b border-line bg-white">
@@ -40,6 +50,7 @@ export function Header() {
             Menu
           </button>
           <nav
+            ref={mobileNavigation}
             className="m-0 ml-auto mr-2 mt-18 w-52 rounded-lg border border-line bg-white p-2 shadow-none"
             id="mobile-navigation"
             aria-label="Mobile primary"
@@ -50,34 +61,28 @@ export function Header() {
                 key={item.label}
                 className="block rounded-md px-3 py-3 font-medium hover:bg-soft"
                 href={item.href}
+                onClick={closeMobileNavigation}
               >
                 {item.label}
               </a>
             ))}
-            <a className="block rounded-md px-3 py-3 font-medium hover:bg-soft" href="#contact">
+            <a
+              className="block rounded-md px-3 py-3 font-medium hover:bg-soft"
+              href="#contact"
+              onClick={closeMobileNavigation}
+            >
               Log in
             </a>
-            <a className="button button-primary mt-1 w-full" href="#courses">
+            <a
+              className="button button-primary mt-1 w-full"
+              href="#courses"
+              onClick={closeMobileNavigation}
+            >
               Start learning
             </a>
           </nav>
         </div>
       </div>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (() => {
-              const menu = document.getElementById("mobile-navigation");
-              if (!(menu instanceof HTMLElement)) return;
-              menu.addEventListener("click", (event) => {
-                if (event.target instanceof HTMLAnchorElement && menu.matches(":popover-open")) {
-                  menu.hidePopover();
-                }
-              });
-            })();
-          `,
-        }}
-      />
     </header>
   );
 }

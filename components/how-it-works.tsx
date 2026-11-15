@@ -3,8 +3,8 @@ import { learningSteps } from "@/data/content";
 
 const toneClass = {
   blue: "bg-brand-quiet text-brand",
-  peach: "bg-[#ffe4d1] text-[#ff664e]",
-  yellow: "bg-butter text-[#e7c82d]",
+  peach: "bg-step-peach text-step-peach-ink",
+  yellow: "bg-butter text-step-yellow-ink",
 } as const;
 
 export function HowItWorks() {

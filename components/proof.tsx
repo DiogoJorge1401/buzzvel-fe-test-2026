@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetUrl } from "@/lib/asset-url";
 
 export function Proof() {
   return (
@@ -14,7 +15,7 @@ export function Proof() {
           </blockquote>
           <figcaption className="mt-7 flex items-center gap-3">
             <Image
-              src="/images/alex-morgan.webp"
+              src={assetUrl("/images/alex-morgan.webp")}
               alt="Alex Morgan"
               width={48}
               height={48}
