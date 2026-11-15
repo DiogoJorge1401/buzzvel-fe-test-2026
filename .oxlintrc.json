@@ -1,0 +1,41 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "import", "oxc"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error"
+  },
+  "rules": {
+    "typescript/no-explicit-any": "error",
+    "typescript/no-non-null-assertion": "error",
+    "typescript/consistent-type-imports": "error",
+    "typescript/ban-ts-comment": "error",
+    "typescript/no-empty-object-type": "error",
+    "typescript/no-wrapper-object-types": "error",
+    "typescript/no-floating-promises": "error",
+    "typescript/no-misused-promises": "error",
+    "typescript/switch-exhaustiveness-check": "error",
+    "import/no-default-export": "error",
+    "no-param-reassign": "error",
+    "no-unused-vars": "error",
+    "no-empty": "error",
+    "no-fallthrough": "error",
+    "prefer-const": "error"
+  },
+  "ignorePatterns": [".next/**", ".omo/**", "node_modules/**", "public/**"],
+  "overrides": [
+    {
+      "files": [
+        "app/layout.tsx",
+        "app/page.tsx",
+        "next-env.d.ts",
+        "next.config.ts",
+        "postcss.config.mjs"
+      ],
+      "rules": {
+        "import/no-default-export": "off",
+        "import/no-unassigned-import": "off"
+      }
+    }
+  ]
+}
